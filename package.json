@@ -11,9 +11,11 @@
     "react": "^18.0.1",
     "react-dom": "^18.0.1",
     "react-hook-form": "^7.34.2",
+    "react-icons": "^4.6.0",
     "react-query": "^3.13.0",
     "react-router-dom": "6.3.0",
-    "react-scripts": "5.0.0"
+    "react-scripts": "5.0.0",
+    "tabler-icons-react": "^1.55.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public",
@@ -42,6 +44,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@iconify/icons-mdi": "^1.2.32",
+    "@iconify/react": "^4.0.0",
     "@storybook/addon-actions": "^6.4.18",
     "@storybook/addon-links": "^6.4.18",
     "@storybook/node-logger": "^6.4.18",

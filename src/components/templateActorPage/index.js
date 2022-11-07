@@ -22,7 +22,7 @@ const TemplateActorPage = ({ actor, children }) => {
   }
   
   // Is undefined???
-  const images = data.posters 
+  const images = data.profiles 
 
   return (
     <>
