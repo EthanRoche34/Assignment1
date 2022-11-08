@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import MovieReviewPage from "./pages/movieReviewPage";
 import SimilarMoviesPage from "./pages/similarMoviesPage";
 import UpcomingPage from "./pages/upcomingMovies";
+import TopMoviesPage from "./pages/topMoviesPage";
 import SiteHeader from "./components/siteHeader";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
@@ -62,6 +63,7 @@ const App = () => {
               <Route path="*" element={<Navigate to="/" />} />
               <Route path="/reviews/:id" element={<MovieReviewPage />} />
               <Route path="movies/upcoming" element={<UpcomingPage />} />
+              <Route path="movies/top" element={<TopMoviesPage />} />
             </Routes>
           </MoviesContextProvider>
         </BrowserRouter>

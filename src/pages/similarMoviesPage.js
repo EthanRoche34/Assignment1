@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import PageTemplate from "../components/templateMovieListPage";
-import { getSimilarMovies } from "../api/tmdb-api";
+import { getMovie, getSimilarMovies } from "../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
 import AddToMustWatchIcon from "../components/cardIcons/addToMustWatch";
@@ -14,6 +14,8 @@ const SimilarMoviesPage = (props) => {
     getSimilarMovies
   );
 
+  const { data: movie } = useQuery(["movie", { id: id }], getMovie);
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -23,6 +25,7 @@ const SimilarMoviesPage = (props) => {
   }
 
   const movies = data.results;
+  const movieName = movie.title;
 
   // Redundant, but necessary to avoid app crashing.
   const mustWatch = movies.filter((m) => m.mustWatch);
@@ -31,7 +34,7 @@ const SimilarMoviesPage = (props) => {
 
   return (
     <PageTemplate
-      title="Similar Movies"
+      title={"Movies Similar to " + movieName}
       movies={movies}
       action={(movie) => {
         return <AddToMustWatchIcon movie={movie} />;
