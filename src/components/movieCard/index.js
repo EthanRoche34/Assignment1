@@ -46,7 +46,7 @@ export default function MovieCard({ movie, action }) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height: "100%"}}>
         <CardHeader
         avatar={
           // Temporary Solution For This exercise

@@ -21,7 +21,7 @@ import { MoviesContext } from "../../contexts/moviesContext";
 export default function ActorCard({ actor, action }) {
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height: "100%" }}>
         <CardHeader
         title={
           <Typography variant="h5" component="p">

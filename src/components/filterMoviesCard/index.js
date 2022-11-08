@@ -47,7 +47,7 @@ const formControl =
   {
     margin: 1,
     minWidth: 220,
-    backgroundColor: "rgb(255, 255, 255)"
+    backgroundColor: "#1f2833"
   };
 
 
@@ -56,7 +56,8 @@ const formControl =
     <Card 
       sx={{
         maxWidth: 345,
-        backgroundColor: "rgb(204, 204, 0)"
+        height: "100%",
+        backgroundColor: "#45A29E"
       }} 
       variant="outlined">
       <CardContent>

@@ -10,7 +10,6 @@ import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
 
-
 const root = {
     display: "flex",
     justifyContent: "center",
@@ -19,7 +18,14 @@ const root = {
     padding: 1.5,
     margin: 0,
 };
+
 const chip = { margin: 0.5 };
+const test = {backgroundColor: 'red',
+"&:hover": {
+  background: "#AFE1AF"
+}}
+
+
 
 const MovieDetails = ({ movie }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -71,6 +77,10 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
             <Chip label={c.name} sx={chip} />
           </li>
         ))}
+
+      </Paper>
+      <Paper component="ul" sx={root}>
+        <Chip label="Similar Movies" sx={test} component="a" href={'/movies/' + movie.id + '/similar'} color="primary" clickable/>
       </Paper>
       <Fab
         color="secondary"

@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
 
-const HomePage = (props) => {
+const ActorsPage = (props) => {
 
   const {  data, error, isLoading, isError }  = useQuery('actors', getActors)
 
@@ -33,4 +33,4 @@ const HomePage = (props) => {
     />
 );
 };
-export default HomePage;
+export default ActorsPage;

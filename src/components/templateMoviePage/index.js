@@ -3,14 +3,14 @@ import MovieHeader from "../headerMovie";
 import Grid from "@mui/material/Grid";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { getMovieImages } from "../../api/tmdb-api";
+import { getMovieImages, getSimilarMovies } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
 
 const TemplateMoviePage = ({ movie, children }) => {
   const { data , error, isLoading, isError } = useQuery(
     ["images", { id: movie.id }],
-    getMovieImages
+    getMovieImages,
   );
 
   if (isLoading) {
@@ -20,8 +20,8 @@ const TemplateMoviePage = ({ movie, children }) => {
   if (isError) {
     return <h1>{error.message}</h1>;
   }
-  const images = data.posters 
 
+  const images = data.posters
   return (
     <>
       <MovieHeader movie={movie} />
@@ -46,7 +46,6 @@ const TemplateMoviePage = ({ movie, children }) => {
             </ImageList>
           </div>
         </Grid>
-
         <Grid item xs={9}>
           {children}
         </Grid>
