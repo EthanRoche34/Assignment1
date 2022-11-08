@@ -12,17 +12,17 @@ const ActorHeader = (props) => {
   const navigate = useNavigate();
 
   return (
-    <Paper 
-        component="div" 
-        sx={{
-            display: "flex",
-            justifyContent: "space-around",
-            flexWrap: "wrap",
-            padding: 1.5,
-            margin: 0,
-        }}
-      >
-      <IconButton aria-label="go back" onClick={() => navigate(-1)} >
+    <Paper
+      component="div"
+      sx={{
+        display: "flex",
+        justifyContent: "space-around",
+        flexWrap: "wrap",
+        padding: 1.5,
+        margin: 0,
+      }}
+    >
+      <IconButton aria-label="go back" onClick={() => navigate(-1)}>
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
 
@@ -31,7 +31,7 @@ const ActorHeader = (props) => {
         <br />
       </Typography>
 
-      <IconButton aria-label="go forward" onClick={() => navigate(+1) } >
+      <IconButton aria-label="go forward" onClick={() => navigate(+1)}>
         <ArrowForwardIcon color="primary" fontSize="large" />
       </IconButton>
     </Paper>

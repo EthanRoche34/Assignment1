@@ -5,10 +5,10 @@ import ActorList from "../actorList";
 import Grid from "@mui/material/Grid";
 
 function ActorListPageTemplate({ actors, title, action }) {
-  let displayedActors = actors
+  let displayedActors = actors;
 
   return (
-    <Grid container sx={{ padding: '20px' }}>
+    <Grid container sx={{ padding: "20px" }}>
       <Grid item xs={12}>
         <Header title={title} />
       </Grid>
