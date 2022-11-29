@@ -16,7 +16,10 @@ const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 const SiteHeader = ({ history }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorE2, setAnchorE2] = useState(null);
+
   const open = Boolean(anchorEl);
+  const openPersonal = Boolean(anchorE2);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -26,9 +29,22 @@ const SiteHeader = ({ history }) => {
   const menuOptions = [
     { label: "Home", path: "/" },
     { label: "Favourites", path: "/movies/favourites" },
+    { label: "Must Watch", path: "/movies/mustWatch" },
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Actors", path: "/actors" },
     { label: "Top Movies", path: "/movies/top" },
+  ];
+
+  const menuNonMobileOptions = [
+    { label: "Home", path: "/" },
+    { label: "Upcoming", path: "/movies/upcoming" },
+    { label: "Actors", path: "/actors" },
+    { label: "Top Movies", path: "/movies/top" },
+  ];
+
+  const personalOptions = [
+    { label: "Favourites", path: "/movies/favourites" },
+    { label: "Must Watch", path: "/movies/mustWatch" },
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -37,6 +53,10 @@ const SiteHeader = ({ history }) => {
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+
+  const handlePersonalMenu = (event) => {
+    setAnchorE2(event.currentTarget);
   };
 
   return (
@@ -87,7 +107,7 @@ const SiteHeader = ({ history }) => {
             </>
           ) : (
             <>
-              {menuOptions.map((opt) => (
+              {menuNonMobileOptions.map((opt) => (
                 <Button
                   key={opt.label}
                   color="inherit"
@@ -96,6 +116,40 @@ const SiteHeader = ({ history }) => {
                   {opt.label}
                 </Button>
               ))}
+
+              <Button
+                id="personalMenu"
+                aria-controls="personalMenuAppbar"
+                aria-haspopup="true"
+                onClick={handlePersonalMenu}
+                colour="inherit"
+              >
+                Personal
+              </Button>
+              <Menu
+                id="personalMenuAppbar"
+                anchore1={anchorE2}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={openPersonal}
+                onClose={() => setAnchorE2(null)}
+              >
+                {personalOptions.map((opt) => (
+                  <MenuItem
+                    key={opt.label}
+                    onClick={() => handleMenuSelect(opt.path)}
+                  >
+                    {opt.label}
+                  </MenuItem>
+                ))}
+              </Menu>
             </>
           )}
         </Toolbar>
