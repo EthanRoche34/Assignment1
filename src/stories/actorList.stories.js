@@ -3,14 +3,16 @@ import ActorList from "../components/actorList";
 import SampleActor from "./sampleActorData";
 import { MemoryRouter } from "react-router";
 import { action } from "@storybook/addon-actions";
-import AddToFavouritesIcon from "../components/cardIcons/addToFavourites";
+import AddToFavouriteActorsIcon from "../components/cardIcons/addToFavouriteActors";
 import Grid from "@mui/material/Grid";
+import MoviesContextProvider from "../contexts/moviesContext";
 
 export default {
   title: "Home Page/ActorList",
   component: ActorList,
   decorators: [
     (Story) => <MemoryRouter initialEntries={["/"]}>{Story()}</MemoryRouter>,
+    (Story) => <MoviesContextProvider>{Story()}</MoviesContextProvider>,
   ],
 };
 
@@ -26,7 +28,7 @@ export const Basic = () => {
     <Grid container spacing={5}>
       <ActorList
         actors={actors}
-        action={(actor) => <AddToFavouritesIcon actor={actor} />}
+        action={(actor) => <AddToFavouriteActorsIcon actor={actor} />}
       />
     </Grid>
   );

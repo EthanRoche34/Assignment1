@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
-import FavouriteMoviesPage from "./pages/favouriteMoviesPage"; // NEW
+import FavouriteMoviesPage from "./pages/favouriteMoviesPage";
 import { Link } from "react-router-dom";
 import MovieReviewPage from "./pages/movieReviewPage";
 import SimilarMoviesPage from "./pages/similarMoviesPage";
@@ -13,9 +13,11 @@ import SiteHeader from "./components/siteHeader";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import MoviesContextProvider from "./contexts/moviesContext";
+//import ActorsContextProvider from "./contexts/actorsContext";
 import AddMovieReviewPage from "./pages/addMovieReviewPage";
 import ActorsPage from "./pages/actorsPage";
 import ActorPage from "./pages/actorDetailsPage";
+import FavouriteActorsPage from "./pages/favouriteActorsPage"; // NEW
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MustWatchPage from "./pages/mustWatchPage";
@@ -55,6 +57,11 @@ const App = () => {
               />
               <Route
                 exact
+                path="/actors/favourites"
+                element={<FavouriteActorsPage />}
+              />
+              <Route
+                exact
                 path="/movies/mustWatch"
                 element={<MustWatchPage />}
               />
@@ -64,12 +71,12 @@ const App = () => {
                 element={<SimilarMoviesPage />}
               />
               <Route path="/" element={<HomePage />} />
-              <Route path="/actors" element={<ActorsPage />} />
-              <Route path="/actors/:id" element={<ActorPage />} />
               <Route path="*" element={<Navigate to="/" />} />
               <Route path="/reviews/:id" element={<MovieReviewPage />} />
               <Route path="movies/upcoming" element={<UpcomingPage />} />
               <Route path="movies/top" element={<TopMoviesPage />} />
+              <Route path="/actors" element={<ActorsPage />} />
+              <Route path="/actors/:id" element={<ActorPage />} />
             </Routes>
           </MoviesContextProvider>
         </BrowserRouter>

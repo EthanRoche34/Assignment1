@@ -18,9 +18,29 @@ import Avatar from "@mui/material/Avatar";
 import { MoviesContext } from "../../contexts/moviesContext";
 
 export default function ActorCard({ actor, action }) {
+  const { favouriteActors, addToFavouriteActors } = useContext(MoviesContext);
+
+  if (favouriteActors.find((id) => id === actor.id)) {
+    actor.favouriteActor = true;
+  } else {
+    actor.favouriteActor = false;
+  }
+
+  const handleAddToFavourite = (e) => {
+    e.preventDefault();
+    addToFavouriteActors(actor);
+  };
+
   return (
     <Card sx={{ maxWidth: 345, height: "100%" }}>
       <CardHeader
+        avatar={
+          actor.favouriteActor ? (
+            <Avatar sx={{ backgroundColor: "red" }}>
+              <FavoriteIcon />
+            </Avatar>
+          ) : null
+        }
         title={
           <Typography variant="h5" component="p">
             {actor.name}{" "}

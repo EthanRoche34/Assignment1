@@ -33,6 +33,7 @@ const SiteHeader = ({ history }) => {
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Actors", path: "/actors" },
     { label: "Top Movies", path: "/movies/top" },
+    { label: "Favourite Actors", path: "/actors/favourites" },
   ];
 
   const menuNonMobileOptions = [
@@ -44,6 +45,7 @@ const SiteHeader = ({ history }) => {
 
   const personalOptions = [
     { label: "Favourites", path: "/movies/favourites" },
+    { label: "Favourite Actors", path: "/actors/favourites" },
     { label: "Must Watch", path: "/movies/mustWatch" },
   ];
 
