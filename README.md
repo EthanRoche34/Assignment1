@@ -15,15 +15,6 @@ Name: Ethan Roche Woodward
 
 ### New Features.
 
-[ Provide a bullet-point list of the __new features__ you added to the Movies Fan app.]
-
-e.g.
-
-- Authentication (using Firebase)
-- Create a fantasy movie (Basic)
-- Sort movie list by release date (e.g. the Discover Movies page)
-- etc
-
 ## Setup requirements.
 
 ## TMDB endpoints.
@@ -40,8 +31,6 @@ e.g.
 
 ### UI Design.
 
-[ Insert screenshots of the **new app pages** you developed (including modified existing pages), Have an appropriate caption for each one (see example below).
-
 ![](./images/DarkMode.png)
 
 > Changed the entire app to being in Dark Mode.
@@ -52,19 +41,31 @@ e.g.
 
 > Shows a list of currently popular actors.
 
+![](./images/ActorDetails.png)
+
+> Shows detailed information on an actor.
+
+![](./images/FavActors1.png)
+![](./images/FavActors2.png)
+
+> Allows the user to select their favourite actors and view them on a favourites page.
+
+![](./images/SimilarMovies1.png)
+![](./images/SimilarMovies2.png)
+
+> Allows the user to view movies similar to the one they are currently looking at.
+
+![](./images/MustWatch.png)
+
+> Allows the user to add upcoming movies to a must watch playlist and view that playlist.
+
 ### Routing.
-
-[ List the __new routes__ supported by your app and state the associated page.]
-
-e.g.
 
 - /actors - displays a list of popular actors.
 - /actors/:id - shows details about a particular actor.
-- /actors/:id/movies (protected) - an actor's movie credits.
-- etc.
-
-[If relevant, state what aspects of your app are protected/private (i.e. require authentication) and what is public.]
+- /movies/:id/similar - shows movies similar to the selected movie
+- /movies/top - shows top movies of all time on TMDB
 
 ## Independent learning (If relevant).
 
-[ Itemize the technologies/techniques you researched independently and adopted in your project, i.e. aspects not covered in the lectures/labs. Mention the source code filenames that illustrate these (code excerpts are not required) and provide references to the online resources that helped you (articles/blogs).
+- Followed https://mui.com/material-ui/customization/dark-mode/#dark-mode-by-default to implement dark mode across the entire app
