@@ -21,7 +21,8 @@ Name: Ethan Roche Woodward
 
 - /movie/{movie_id}/similar - A list of similar movies.
 - /person/popular - A list of popular actors.
-- /person/{id} - Details on the selected actor
+- /person/{id} - Details on the selected actor.
+- /movies/top - Top movies of all time.
 
 ## App Design.
 
@@ -34,8 +35,6 @@ Name: Ethan Roche Woodward
 ![](./images/DarkMode.png)
 
 > Changed the entire app to being in Dark Mode.
-
-> Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
 
 ![](./images/Actors.png)
 
@@ -63,8 +62,8 @@ Name: Ethan Roche Woodward
 
 - /actors - displays a list of popular actors.
 - /actors/:id - shows details about a particular actor.
-- /movies/:id/similar - shows movies similar to the selected movie
-- /movies/top - shows top movies of all time on TMDB
+- /movies/:id/similar - shows movies similar to the selected movie.
+- /movies/top - shows top movies of all time on TMDB.
 
 ## Independent learning (If relevant).
 
